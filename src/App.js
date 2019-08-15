@@ -23,7 +23,7 @@ function App() {
       <h1>Hello From Bobby's NASA Photo App!</h1>
       <PhotoCard title={data.title}
                  url={data.url}
-                 explaination={data.explaination}/>
+                 explanation={data.explanation}/>
     </div>
   );
 }
