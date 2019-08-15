@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import PhotoCard from './components/photoCard.js'
+
+import ImageComponent from './components/ImageComponent';
+import Title from './components/Title';
+import Explanation from './components/Explanation';
+import Header from './components/Header';
+import Button from './components/Button';
 
 import "./App.css";
 
@@ -16,14 +21,15 @@ function App() {
     .catch( (error) => {
       console.log(error)
     })
-}, [])
+  }, [])
   console.log('bottom')
+  
   return (
     <div className="App">
-      <h1>Hello From Bobby's NASA Photo App!</h1>
-      <PhotoCard title={data.title}
-                 url={data.url}
-                 explanation={data.explanation}/>
+        <Header />
+        <Title title={data.title} />
+        <ImageComponent url={data.url} />
+        <Explanation explanation={data.explanation} />
     </div>
   );
 }
